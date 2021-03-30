@@ -1,6 +1,7 @@
-import Phaser from 'phaser'
+import Phaser, { Physics } from "phaser"
+import { TitleScene } from "./scenes"
 
-const config = {
+const GameConfig = {
   width: 800,
   height: 500,
   type: Phaser.AUTO,
@@ -10,26 +11,12 @@ const config = {
       gravity: {
         y: 0,
       },
-      debug: true,
     },
   },
-  scene: {
-      preload: preload,
-      create: create,
-      update: update
-  }
 };
 
-const game = new Phaser.Game(config)
+const game = new Phaser.Game(GameConfig);
 
-function preload() {
+game.scene.add("title", TitleScene);
 
-}
-
-function create() {
-
-}
-
-function update() {
-
-}
+game.scene.start("title");
