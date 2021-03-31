@@ -9,7 +9,7 @@ const GameConfig = {
     default: "arcade",
     arcade: {
       gravity: {
-        y: 0,
+        y: 100,
       },
     },
   },
