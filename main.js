@@ -9,13 +9,23 @@ const GameConfig = {
     default: "arcade",
     arcade: {
       gravity: {
-        y: 100,
+        y: 300,
       },
     },
   },
 };
 
 const game = new Phaser.Game(GameConfig);
+
+let scenePlaying = "title";
+
+export function handleSceneChange() {
+  if (scenePlaying === "title") {
+    scenePlaying = "gamescene";
+  } else {
+    scenePlaying = "title";
+  }
+}
 
 game.scene.add("title", TitleScene);
 game.scene.add("gamescene", GameScene);
